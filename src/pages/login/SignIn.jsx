@@ -4,9 +4,21 @@ import { Link, useNavigate } from "react-router";
 import { AuthContext } from "../../authcontext/AuthContext";
 const SignUp = () => {
     const navigate = useNavigate();
-    const {user} = use(AuthContext);
-    const handleSignUp = (e) => {
+    const {user, signIn, signInWithG} = use(AuthContext);
+    const handleSignIn = (e) => {
         e.preventDefault();
+        const form = e.target;
+        const email = form.email.value;
+        const password = form.password.value;
+        signIn(email, password) 
+        .then((result) => {
+            const user = result.user;
+            console.log(user);
+            form.reset();
+        })
+        .catch((error) => {
+            console.error(error);
+        });
     }
         if(user){
         navigate('/');
@@ -16,7 +28,7 @@ const SignUp = () => {
       <div className="card w-full max-w-sm shadow-xl bg-base-100">
         <h2 className="text-center text-2xl font-bold mt-3">Welcome Back</h2>
         <LoginWithGoogle/>
-        <form className="card-body" onSubmit={handleSignUp}>
+        <form className="card-body" onSubmit={handleSignIn}>
           <div className="form-control">
             <label className="label" htmlFor="email">
               <span className="label-text">Email</span>
@@ -40,7 +52,7 @@ const SignUp = () => {
             />
           </div>
           <div className="form-control mt-6">
-            <button className="btn bg-[#8550fb] text-white w-full">Sign Up</button>
+            <button className="btn bg-[#8550fb] text-white w-full">Sign In</button>
           </div>
         </form>
         <p className="text-center text-gray-500 font-semibold mb-4">Didn't Signed Up? <Link className="text-[#8550fb] font-semibold" to={'/signup'}>Sign Up</Link></p>

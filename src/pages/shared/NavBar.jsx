@@ -1,6 +1,7 @@
 import { use } from "react";
 import { Link, NavLink } from "react-router";
 import { AuthContext } from "../../authcontext/AuthContext";
+import Avatar from "./Avatar";
 
 const NavBar = () => {
   const {user} = use(AuthContext);
@@ -22,7 +23,7 @@ const NavBar = () => {
       </div>
       <div className="userLogin">
         {
-          user ? <span className="font-semibold text-gray-600">Hello, {user.email}</span> : <Link to={'/signup'} className="btn bg-[#8550fb] text-white font-semibold shadow-[#8550fb] hover:shadow-sm border-none transition-all duration-300">Get Started</Link>
+          user ? <Avatar/> : <Link to={'/signup'} className="btn bg-[#8550fb] text-white font-semibold shadow-[#8550fb] hover:shadow-sm border-none transition-all duration-300">Get Started</Link>
         }
       </div>
     </div>

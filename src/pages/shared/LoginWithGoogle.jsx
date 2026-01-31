@@ -1,7 +1,14 @@
+import { use } from "react";
+import { AuthContext } from "../../authcontext/AuthContext";
+
 const LoginWithGoogle = () => {
+    const {signInWithG} = use(AuthContext);
+    const handleGoogleSignIn = () => {
+        signInWithG();
+    }
   return (
     <div className="flex justify-center py-2">
-      <button className="btn bg-white text-black border-[#e5e5e5]">
+      <button className="btn bg-white text-black border-[#e5e5e5]" onClick={handleGoogleSignIn}>
         <svg
           aria-label="Google logo"
           width="16"
