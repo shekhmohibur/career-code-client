@@ -10,16 +10,11 @@ const NavBar = () => {
   const menuRef = useRef(null);
   useEffect(() => {
   const handleClickOutside = (e) => {
-    // Check if the click is outside the menuRef div
     if (menuRef.current && !menuRef.current.contains(e.target) && menuOpen) {
       setMenuOpen(false);
     }
   };
-
-  // Add event listener for clicks outside of the menu
   window.addEventListener('click', handleClickOutside);
-
-  // Cleanup the event listener when the component unmounts or updates
   return () => {
     window.removeEventListener('click', handleClickOutside);
   };
