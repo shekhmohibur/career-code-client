@@ -1,10 +1,15 @@
-import React from "react";
+import React, { use } from "react";
 import LoginWithGoogle from "../shared/LoginWithGoogle";
-import { Link } from "react-router";
-
+import { Link, useNavigate } from "react-router";
+import { AuthContext } from "../../authcontext/AuthContext";
 const SignUp = () => {
+    const navigate = useNavigate();
+    const {user} = use(AuthContext);
     const handleSignUp = (e) => {
         e.preventDefault();
+    }
+        if(user){
+        navigate('/');
     }
   return (
     <div className="flex justify-center items-center mt-20">
