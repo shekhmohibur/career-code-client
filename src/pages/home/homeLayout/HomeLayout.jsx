@@ -3,7 +3,7 @@ import AllJobs from "../AllJobs";
 import { Suspense } from "react";
 
 const HomeLayout = () => {
-  const jobsPromise = fetch("http://localhost:3000/jobs").then((res) =>
+  const jobsPromise = fetch("https://codecareerv1.onrender.com/jobs").then((res) =>
     res.json(),
   );
   return (
