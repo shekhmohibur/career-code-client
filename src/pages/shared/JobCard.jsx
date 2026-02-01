@@ -71,12 +71,12 @@ const JobCard = ({ job }) => {
             }
         </div>
         {/* card actions */}
-        <div className="mt-5">
+        <div className="mt-5 flex justify-end">
           <Link
             to={`/job-Details/${_id}`}
             className="btn bg-blue-100 text-blue-500 hover:bg-blue-600 hover:text-white border-none"
           >
-            Apply Now
+            Details
           </Link>
         </div>
       </div>
