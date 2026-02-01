@@ -22,7 +22,7 @@ const RootLayout = () => {
       <header className={`${isScroll ? 'sticky animate__animated animate__fadeInDown bg-white shadow-md' : ''} top-0 z-50 `} style={{ '--animate-duration': '1s' }}>
         <NavBar />
       </header>
-      <main className="grow">
+      <main className="grow overflow-hidden">
         <Outlet />
       </main>
       <footer className="mt-auto">

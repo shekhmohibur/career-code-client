@@ -4,6 +4,7 @@ import Home from "../pages/home/Home";
 import NotFound from "../pages/error/NotFound";
 import SignIn from "../pages/login/SignIn";
 import SignUp from "../pages/register/SignUp";
+import HomeLayout from "../pages/home/homeLayout/HomeLayout";
 
 const Router = createBrowserRouter([
     {
@@ -12,7 +13,7 @@ const Router = createBrowserRouter([
         children: [
             {
                 index:true,
-                Component:Home
+                Component:HomeLayout
             },
             {
                 path:"signin",
