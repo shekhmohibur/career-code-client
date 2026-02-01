@@ -1,16 +1,57 @@
-# React + Vite
+# CareerCode Client
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+CareerCode is a professional career development platform designed to bridge the gap between job seekers and employers through AI-driven insights and streamlined recruitment workflows. This repository contains the frontend application built with Next.js.
 
-Currently, two official plugins are available:
+## 🚀 Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **AI Resume Builder:** Generate and optimize resumes based on industry standards.
+- **Job Matching Engine:** Advanced filtering and matching algorithms to find the perfect role.
+- **Interactive Dashboard:** Real-time tracking for applications and interview schedules.
+- **Responsive Design:** Fully optimized for mobile, tablet, and desktop views.
+- **Secure Authentication:** Integrated JWT and OAuth support for secure user access.
 
-## React Compiler
+## 🛠️ Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **Framework:** [Next.js 14+](https://nextjs.org/) (App Router)
+- **Styling:** [Tailwind CSS](https://tailwindcss.com/)
+- **State Management:** [TanStack Query (React Query)](https://tanstack.com/query/latest) & Zustand
+- **Form Handling:** React Hook Form with Zod validation
+- **UI Components:** Shadcn/ui & Radix UI
+- **Icons:** Lucide React
 
-## Expanding the ESLint configuration
+## 📋 Prerequisites
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Before you begin, ensure you have the following installed:
+
+- Node.js (v18.0.0 or higher)
+- npm or yarn
+
+## ⚙️ Getting Started
+
+1. Clone the repository:
+
+   ```bash
+   git clone no Access
+   ```
+
+2. Install dependencies:
+
+   ```bash
+   npm install
+   ```
+
+3. Set up environment variables:
+   Create a `.env.local` file in the root directory and add your backend API URL:
+
+   ```env
+   NEXT_PUBLIC_API_URL=http://localhost:5000/api
+   ```
+
+4. Run the development server:
+   ```bash
+   npm run dev
+   ```
+
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+## 🏗️ Project Structure
