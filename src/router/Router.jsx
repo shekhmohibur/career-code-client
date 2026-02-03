@@ -5,6 +5,7 @@ import NotFound from "../pages/error/NotFound";
 import SignIn from "../pages/login/SignIn";
 import SignUp from "../pages/register/SignUp";
 import HomeLayout from "../pages/home/homeLayout/HomeLayout";
+import JobDetails from "../pages/jobDetails/JobDetails";
 
 const Router = createBrowserRouter([
     {
@@ -23,6 +24,10 @@ const Router = createBrowserRouter([
                 path:"signup",
                 Component: SignUp,
             },
+            {
+                path:'/job-Details/:id',
+                Component:JobDetails,
+            }
         ]
     },
     {
