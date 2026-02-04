@@ -2,7 +2,7 @@ import { Link } from "react-router";
 import { useEffect, useRef, useState } from "react";
 import useAuth from "../../hooks/useAuth";
 const Avatar = () => {
-  const { logOut } = useAuth();
+  const { logOut, user } = useAuth();  
   const [toggleAvatar, setToggleAvatar] = useState(false);
   const avatarRef = useRef(null);
   useEffect(() => {
@@ -31,18 +31,24 @@ const Avatar = () => {
     <div className="relative z-50 group">
       <div className="avatar cursor-pointer" onClick={handleToggler}>
         <div className="w-16 rounded-full">
-          <img src="https://img.daisyui.com/images/profile/demo/spiderperson@192.webp" />
+          <img src={user && user.photoURL ? user.photoURL : `https://img.daisyui.com/images/profile/demo/spiderperson@192.webp`} />
         </div>
       </div>
       <div
         ref={avatarRef}
-        className={`mt-3 flex-col items-start gap-1 absolute flex bg-blue-50 shadow w-32 ${toggleAvatar ? "" : "hidden"}`}
+        className={`mt-3 flex-col items-start gap-1 absolute right-0 top-14 flex bg-blue-50 shadow w-40 ${toggleAvatar ? "" : "hidden"}`}
       >
         <Link
           to={"/profile"}
           className="w-full font-semibold hover:bg-blue-100 px-2 py-1"
         >
           View Profile
+        </Link>
+        <Link
+          to={"/my-applications"}
+          className="w-full font-semibold hover:bg-blue-100 px-2 py-1"
+        >
+         My Applications
         </Link>
         <button
           onClick={handleSignOut}

@@ -1,11 +1,18 @@
-import React from 'react';
+import React, { Suspense } from "react";
+import {useParams } from "react-router";
+import SingleJob from "./SingleJob";
+import Loader from "../shared/Loader";
 
 const JobDetails = () => {
-    return (
-        <div>
-            details
-        </div>
-    );
+  const { id } = useParams();
+  const singleJobPromise = fetch(`https://code-career-server.vercel.app/jobs/${id}`).then(
+    (res) => res.json()
+  );
+  return <div>
+    <Suspense fallback={<Loader/>}>
+        <SingleJob jobData={singleJobPromise}/>
+    </Suspense>
+  </div>;
 };
 
 export default JobDetails;

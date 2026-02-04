@@ -2,9 +2,7 @@ import { use } from "react";
 import JobCard from "../shared/JobCard";
 
 const AllJobs = ({ jobsPromise }) => {
-  const jobs = use(jobsPromise);
-  console.log(jobs);
-  
+  const jobs = use(jobsPromise);  
   return (
     <div>
       <h2 className="text-5xl uppercase text-center font-bold font-sans mb-5">

@@ -1,12 +1,12 @@
-import React, { use, useState } from "react";
+import { useState } from "react";
 import LoginWithGoogle from "../shared/LoginWithGoogle";
-import { Link, useNavigate } from "react-router";
-import { AuthContext } from "../../authcontext/AuthContext";
+import { Link, useNavigate } from "react-router";import useAuth from "../../hooks/useAuth";
 
 const SignUp = () => {
     const navigate = useNavigate();
     const [error, setError] = useState(null);
-    const {createUser, user} = use(AuthContext);
+    const {createUser, user} = useAuth();
+    const [isRegistering, setIsRegistering] = useState(false);
     if(user){
         navigate('/');
     }
@@ -16,6 +16,7 @@ const SignUp = () => {
         const email = form.email.value;
         const password = form.password.value;
         const confirmPassword = form.confirmPassword.value;
+        setIsRegistering(true);
         if(password !== confirmPassword){
             setError("Passwords do not match");
             return;
@@ -23,9 +24,7 @@ const SignUp = () => {
             setError(null);
         }
         createUser(email, password)
-        .then((result) => {
-            const user = result.user;
-            console.log(user);
+        .then(() => {
             form.reset();
         })
         .catch((error) => {
@@ -77,7 +76,13 @@ const SignUp = () => {
             />
           </div>
           <div className="form-control mt-6">
-            <button className="btn bg-[#8550fb] text-white w-full">Sign Up</button>
+            <button className="btn bg-[#8550fb] text-white w-full">
+              {isRegistering && !error ? (
+                <span className="">Registering...</span>
+              ) : (
+                <span>Sign Up</span>
+              )}
+            </button>
           </div>
         </form>
         <p className="text-center text-gray-500 font-semibold mb-4">Already Signed Up? <Link className="text-[#8550fb] font-semibold" to={'/signin'}>Sign In</Link></p>

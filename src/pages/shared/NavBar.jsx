@@ -26,9 +26,10 @@ const NavBar = () => {
   
   const navLinks = [
     { id: 1, name: "Home", path: "/" },
-    { id: 2, name: "Find Job", path: "/findJobs" },
-    { id: 3, name: "Recruiters", path: "/recruiters" },
-    { id: 4, name: "Candidates", path: "/candidates" },
+    { id: 2, name: "Add Job", path: "/addJob" },
+    { id: 3, name: "My Posted Jobs", path: "/my-posted-jobs" },
+    { id: 4, name: "Recruiters", path: "/recruiters" },
+    { id: 5, name: "Candidates", path: "/candidates" },
   ];
   return (
     <div>
@@ -42,7 +43,7 @@ const NavBar = () => {
             CodeCareer
           </Link>
         </div>
-        <div ref={menuRef} className={`navLinks flex-col ${menuOpen ? "flex" : 'hidden'} absolute top-12 bg-blue-50 rounded-sm shadow-md w-28`}>
+        <div ref={menuRef} className={`navLinks flex-col ${menuOpen ? "flex" : 'hidden'} absolute top-12 bg-blue-50 rounded-sm shadow-md w-32`}>
           {navLinks?.map((link) => (
             <NavLink
               to={link.path}
