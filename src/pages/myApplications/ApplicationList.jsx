@@ -1,27 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React, { use, useState } from "react";
 import {
-  ApplicationListPromise,
   deleteApplication,
 } from "../../api/applicationsApi";
-import Loader from "../shared/Loader";
 import Swal from "sweetalert2";
 
-const ApplicationList = ({ email }) => {
-  const [applications, setApplications] = useState([]);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    ApplicationListPromise(email)
-      .then((data) => {
-        setApplications(data);
-        setLoading(false);
-      })
-      .catch((err) => {
-        console.error(err);
-        setLoading(false);
-      });
-  }, [email]);
-
+const ApplicationList = ({ApplicationListPromise}) => {
+  const [applications, setApplications] = useState(use(ApplicationListPromise));
   const handleDelete = async (id) => {
     try {
       await deleteApplication(id);
@@ -42,9 +26,6 @@ const ApplicationList = ({ email }) => {
       });
     }
   };
-
-  if (loading) return <div className="text-center py-10"><Loader/></div>;
-
   return (
     <div className="w-11/12 mx-auto my-10">
       {/* Desktop Table View */}

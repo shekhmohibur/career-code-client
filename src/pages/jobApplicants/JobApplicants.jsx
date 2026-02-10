@@ -10,7 +10,7 @@ const JobApplicants = () => {
   console.log(applicantsData);
   const handleStatus = (e, applicantId) => {
     const selectedStatus = e.target.value;
-    axios.patch(`https://code-career-server.vercel.app/applications/${applicantId}`, { status: selectedStatus }).then(res => {
+    axios.patch(`${import.meta.env.VITE_server}/applications/${applicantId}`, { status: selectedStatus }).then(res => {
         if(res.data.modifiedCount){
             Swal.fire({
                 icon: 'success',

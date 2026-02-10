@@ -19,7 +19,7 @@ const AddJob = () => {
       responsibilities,
       ...initialData,
     };
-    axios.post("https://code-career-server.vercel.app/jobs", jobData)
+    axios.post(`${import.meta.env.VITE_server}/jobs`, jobData)
       .then((res) => {
         if(res.data.insertedId){
             Swal.fire({

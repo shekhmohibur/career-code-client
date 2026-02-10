@@ -5,7 +5,7 @@ import Loader from "../shared/Loader";
 
 const JobDetails = () => {
   const { id } = useParams();
-  const singleJobPromise = fetch(`https://code-career-server.vercel.app/jobs/${id}`).then(
+  const singleJobPromise = fetch(`${import.meta.env.VITE_server}/jobs/${id}`).then(
     (res) => res.json()
   );
   return <div>

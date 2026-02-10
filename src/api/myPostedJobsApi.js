@@ -1,12 +1,12 @@
  const myPostedJobsPromise = (email) => {
-  return fetch(`https://code-career-server.vercel.app/jobs?email=${email}`).then((response) =>
+  return fetch(`${import.meta.env.VITE_server}/jobs?email=${email}`).then((response) =>
     response.json(),
   );
 };
 export default myPostedJobsPromise;
 
 const deleteMyPostedJob = (id) => {
-  return fetch(`https://code-career-server.vercel.app/jobs/${id}`, {
+  return fetch(`${import.meta.env.VITE_server}/jobs/${id}`, {
     method: "DELETE"
     }).then((response) => {
     if (!response.ok) {

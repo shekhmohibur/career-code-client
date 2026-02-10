@@ -23,7 +23,7 @@ const jobId = location.pathname.split("/").pop();
           resumeLink,
         },
       };
-      axios.post('https://code-career-server.vercel.app/applications', applicationData)
+      axios.post(`${import.meta.env.VITE_server}/applications`, applicationData)
       .then(res => {
         if(res.data.insertedId) {
           Swal.fire({

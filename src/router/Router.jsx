@@ -12,6 +12,7 @@ import AddJob from "../pages/addJob/AddJob";
 import MypostedJobs from "../pages/postedJobs/MypostedJobs";
 import JobApplicants from "../pages/jobApplicants/JobApplicants";
 import Loader from "../pages/shared/Loader";
+import Profile from "../pages/profile/Profile";
 
 const Router = createBrowserRouter([
   {
@@ -37,7 +38,7 @@ const Router = createBrowserRouter([
             <JobApplicants/>
           </PrivateRoutes>
         ),
-        loader: ({ params }) => fetch(`https://code-career-server.vercel.app/applications/job/${params.job_id}`),
+        loader: ({ params }) => fetch(`${import.meta.env.VITE_server}/job/${params.job_id}`),
         hydrateFallbackElement: <Loader/>
       },
       {
@@ -45,6 +46,14 @@ const Router = createBrowserRouter([
         element: (
           <PrivateRoutes>
             <AddJob />
+          </PrivateRoutes>
+        ),
+      },
+      {
+        path:'profile',
+        element: (
+          <PrivateRoutes>
+            <Profile/>
           </PrivateRoutes>
         ),
       },
@@ -68,7 +77,7 @@ const Router = createBrowserRouter([
         path: "job-Details/:id",
         element: <JobDetails />,
         loader: ({ params }) => {
-          fetch(`https://code-career-server.vercel.app/jobs/${params?.id}`);
+          fetch(`${import.meta.env.VITE_server}/jobs/${params?.id}`);
         },
       },
       {
