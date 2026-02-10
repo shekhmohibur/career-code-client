@@ -38,7 +38,7 @@ const Router = createBrowserRouter([
             <JobApplicants/>
           </PrivateRoutes>
         ),
-        loader: ({ params }) => fetch(`${import.meta.env.VITE_server}/job/${params.job_id}`),
+        loader: ({ params }) => fetch(`${import.meta.env.VITE_server}/applications/job/${params.job_id}`),
         hydrateFallbackElement: <Loader/>
       },
       {

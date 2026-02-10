@@ -5,7 +5,6 @@ import Swal from "sweetalert2";
 
 const JobApplicants = () => {
   const { job_id } = useParams();
-  console.log(job_id);
   const applicantsData = useLoaderData();
   console.log(applicantsData);
   const handleStatus = (e, applicantId) => {
