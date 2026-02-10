@@ -44,7 +44,7 @@ Before you begin, ensure you have the following installed:
    Create a `.env.local` file in the root directory and add your backend API URL:
 
    ```env
-   NEXT_PUBLIC_API_URL=http://localhost:5000/api
+   NEXT_PUBLIC_API_URL=https://careercodev1.vercel.app/
    ```
 
 4. Run the development server:
@@ -52,6 +52,6 @@ Before you begin, ensure you have the following installed:
    npm run dev
    ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [https://careercodev1.vercel.app/](https://careercodev1.vercel.app/) with your browser to see the result.
 
 ## 🏗️ Project Structure
