@@ -7,11 +7,8 @@ import {
   Fingerprint,
 } from "lucide-react";
 import useAuth from "../../hooks/useAuth";
-
-
 const Profile = () => {
   const { user } = useAuth();
-
   if (!user) {
     return (
       <div className="min-h-screen flex items-center justify-center text-gray-500">
@@ -82,6 +79,15 @@ const Profile = () => {
             label="Last Login"
             value={new Date(user.metadata.lastSignInTime).toLocaleString()}
           />
+
+          {/* Application Status Section */}
+          <div className="col-span-full">
+            <div className="bg-gray-50 rounded-xl p-4">
+              <p className="text-gray-600 text-sm font-semibold capitalize">
+                applied for
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
