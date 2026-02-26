@@ -1,7 +1,6 @@
 import JobCard from "../shared/JobCard";
 
-const AllJobs = ({ jobs, error }) => {
-  if (error) return <div className="text-center py-10 text-red-500">Error: {error}</div>;
+const AllJobs = ({ jobs }) => {
   return (
     <div>
       <h2 className="text-5xl uppercase text-center font-bold font-sans mb-5">

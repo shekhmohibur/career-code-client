@@ -65,7 +65,7 @@ const JobApplicants = () => {
                 </td>
                 <td>
                   <Link
-                    to={applicant.applicant.resumeLink}
+                    to={applicant?.applicant.resumeLink}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="badge badge-accent"
