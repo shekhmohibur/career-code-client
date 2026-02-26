@@ -1,57 +1,124 @@
 # CareerCode Client
 
-CareerCode is a professional career development platform designed to bridge the gap between job seekers and employers through AI-driven insights and streamlined recruitment workflows. This repository contains the frontend application built with Next.js.
+**CareerCode Client** is the frontend application for a career development platform that helps job seekers and employers connect. The UI is built with **React** and bundled with **Vite** for a fast development experience. The app uses Firebase for authentication and Axios for API communication with a backend service.
+
+---
 
 ## 🚀 Features
 
-- **AI Resume Builder:** Generate and optimize resumes based on industry standards.
-- **Job Matching Engine:** Advanced filtering and matching algorithms to find the perfect role.
-- **Interactive Dashboard:** Real-time tracking for applications and interview schedules.
-- **Responsive Design:** Fully optimized for mobile, tablet, and desktop views.
-- **Secure Authentication:** Integrated JWT and OAuth support for secure user access.
+- User authentication with Firebase (email/password & Google)
+- Browse, post and apply for jobs
+- View job details and applicant lists
+- Dashboard with personal applications and posted jobs
+- Responsive layout using Tailwind CSS and DaisyUI
+- Reusable components like job cards, loaders, avatars, etc.
+
+---
 
 ## 🛠️ Tech Stack
 
-- **Framework:** [Next.js 14+](https://nextjs.org/) (App Router)
-- **Styling:** [Tailwind CSS](https://tailwindcss.com/)
-- **State Management:** [TanStack Query (React Query)](https://tanstack.com/query/latest) & Zustand
-- **Form Handling:** React Hook Form with Zod validation
-- **UI Components:** Shadcn/ui & Radix UI
+- **Framework:** React (v19) with React Router v7
+- **Build tool:** Vite
+- **Styling:** Tailwind CSS, DaisyUI, Animate.css
+- **HTTP client:** Axios
+- **State & Hooks:** Custom hooks (`useAuth`, `useAxiosSecure`)
+- **Authentication:** Firebase
+- **Animations:** Lottie React, Framer Motion (`motion`)
+- **Notifications:** React Toastify, SweetAlert2
 - **Icons:** Lucide React
 
-## 📋 Prerequisites
+---
 
-Before you begin, ensure you have the following installed:
+## 📁 Project Structure
 
-- Node.js (v18.0.0 or higher)
+```
+src/
+├── api/                # Axios calls and custom hooks
+├── assets/             # Static/animation files
+├── authcontext/        # Context provider for auth state
+├── hooks/              # Reusable React hooks
+├── layouts/            # Layout components
+├── pages/              # Route components organized by feature
+│   ├── addJob/
+│   ├── home/
+│   ├── jobApplicants/
+│   ├── jobApply/
+│   ├── jobDetails/
+│   ├── login/          # SignIn
+│   ├── register/       # SignUp
+│   ├── myApplications/
+│   ├── postedJobs/
+│   ├── profile/
+│   └── shared/         # Shared UI components
+├── provider/           # AuthProvider.jsx
+├── router/             # Router.jsx
+└── routes/             # PrivateRoutes.jsx
+```
+
+---
+
+## 📦 Getting Started
+
+### Prerequisites
+
+- Node.js v18+ installed
 - npm or yarn
 
-## ⚙️ Getting Started
+### Installation
 
-1. Clone the repository:
+```bash
+# clone the repository
+git clone https://github.com/<your-org>/career-code-client.git
+cd career-code-client
 
-   ```bash
-   git clone no Access
-   ```
+# install dependencies
+npm install
+```
 
-2. Install dependencies:
+### Environment Variables
 
-   ```bash
-   npm install
-   ```
+Create a `.env` (or `.env.local`) file in project root containing at least:
 
-3. Set up environment variables:
-   Create a `.env.local` file in the root directory and add your backend API URL:
+```env
+VITE_API_URL=https://your-backend-api.example.com
+```
 
-   ```env
-   NEXT_PUBLIC_API_URL=https://careercodev1.vercel.app/
-   ```
+### Run Locally
 
-4. Run the development server:
-   ```bash
-   npm run dev
-   ```
+```bash
+npm run dev
+```
 
-Open [https://careercodev1.vercel.app/](https://careercodev1.vercel.app/) with your browser to see the result.
+Open http://localhost:5173 in your browser.
 
-## 🏗️ Project Structure
+### Build for Production
+
+```bash
+npm run build
+npm run preview
+```
+
+---
+
+## 🧪 Scripts
+
+- `npm run dev` – start development server
+- `npm run build` – create production build
+- `npm run preview` – locally preview production build
+- `npm run lint` – run ESLint
+
+---
+
+## 📘 Contributing
+
+1. Fork the repo
+2. Create a feature branch (`git checkout -b feature/foo`)
+3. Commit your changes (`git commit -m 'feat: add foo'`)
+4. Push to the branch (`git push origin feature/foo`)
+5. Open a pull request
+
+---
+
+## 📄 License
+
+This project is licensed under the MIT License.
