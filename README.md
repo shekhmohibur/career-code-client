@@ -68,7 +68,7 @@ src/
 
 ```bash
 # clone the repository
-git clone https://github.com/<your-org>/career-code-client.git
+git clone https://github.com/shekhmohibur/career-code-client.git
 cd career-code-client
 
 # install dependencies
@@ -80,7 +80,7 @@ npm install
 Create a `.env` (or `.env.local`) file in project root containing at least:
 
 ```env
-VITE_API_URL=https://your-backend-api.example.com
+VITE_API_URL=https://code-career-server.vercel.app/
 ```
 
 ### Run Locally
